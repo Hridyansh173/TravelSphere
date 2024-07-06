@@ -6,7 +6,6 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import GuestAccessPage from './pages/GuestAccessPage';
 import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
 import BookingPage from './pages/BookingPage';
 import ContactUsPage from './pages/ContactUsPage';
 import ErrorPage from './components/ErrorPage';
@@ -26,11 +25,7 @@ const App = () => {
             <HomePage />
             <Footer />
           </>} />
-          <Route path="/about" element={<>
-            <Navbar />
-            <AboutPage />
-            <Footer />
-          </>} />
+
           <Route path="/booking" element={<>
             <Navbar />
             <BookingPage />
