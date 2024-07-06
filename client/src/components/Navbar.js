@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -19,6 +18,7 @@ const Navbar = () => {
         <li><Link className="text-white hover:text-yellow-500" to="/booking">Explore</Link></li>
         <li><Link className="text-white hover:text-yellow-500" to="/about">About</Link></li>
         <li><Link className="text-white hover:text-yellow-500" to="/contact">Contact Us</Link></li>
+        <li><Link className="text-white hover:text-yellow-500" to="/travel-blogs">Travel Blogs</Link></li>
       </ul>
       <button
         className="text-white hover:text-yellow-500"

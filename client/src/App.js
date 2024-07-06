@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -12,6 +11,7 @@ import BookingPage from './pages/BookingPage';
 import ContactUsPage from './pages/ContactUsPage';
 import ErrorPage from './components/ErrorPage';
 import TripDetailsPage from './pages/TripDetailsPage';
+import TravelBlogsPage from './pages/TravelBlogsPage';
 
 const App = () => {
   return (
@@ -44,6 +44,11 @@ const App = () => {
           <Route path="/trips/:id" element={<>
             <Navbar />
             <TripDetailsPage />
+            <Footer />
+          </>} />
+          <Route path="/travel-blogs" element={<>
+            <Navbar />
+            <TravelBlogsPage />
             <Footer />
           </>} />
           <Route path="*" element={<ErrorPage />} />
