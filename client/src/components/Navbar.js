@@ -5,18 +5,15 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Perform logout actions here, e.g., clearing localStorage, state, etc.
-    localStorage.removeItem('authToken'); // Clearing the authentication token
-    navigate('/'); // Redirect to the login page
+    localStorage.removeItem('authToken');
+    navigate('/');
   };
 
   return (
     <nav className="bg-gray-800 p-4 flex justify-between items-center">
       <ul className="flex justify-around items-center space-x-4">
         <li><Link className="text-white hover:text-yellow-500" to="/home">Home</Link></li>
-        <li><Link className="text-white hover:text-yellow-500" to="/trips">Trips</Link></li>
         <li><Link className="text-white hover:text-yellow-500" to="/booking">Explore</Link></li>
-        <li><Link className="text-white hover:text-yellow-500" to="/about">About</Link></li>
         <li><Link className="text-white hover:text-yellow-500" to="/contact">Contact Us</Link></li>
         <li><Link className="text-white hover:text-yellow-500" to="/travel-blogs">Travel Blogs</Link></li>
       </ul>
