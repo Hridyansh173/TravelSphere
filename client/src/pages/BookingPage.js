@@ -1,5 +1,8 @@
+// src/pages/BookingPage.js
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { GET_ALL_TRIPS_ENDPOINT } from '../services/api';
 import newYorkImage from '../newyrk1.avif';
 import romeImage from '../rome1.avif';
@@ -7,7 +10,7 @@ import kyotoImage from '../kyoto1.avif';
 import serengetiImage from '../serengeti1.avif';
 import baliImage from '../bali1.avif';
 import caribbeanImage from '../cari1.avif';
-import swissImage from '../swiss1.jpg'; // Ensure this import path is correct
+import swissImage from '../swiss1.jpg';
 import homeImage from '../homeimg1.jpg';
 
 const imageMapping = {
@@ -17,7 +20,7 @@ const imageMapping = {
   'Tanzania': serengetiImage,
   'Bali, Indonesia': baliImage,
   'Caribbean': caribbeanImage,
-  'Zermatt, Switzerland': swissImage, // Ensure this key matches exactly with your data
+  'Zermatt, Switzerland': swissImage,
 };
 
 const BookingPage = () => {
@@ -27,7 +30,7 @@ const BookingPage = () => {
     const fetchTrips = async () => {
       try {
         const response = await axios.get(GET_ALL_TRIPS_ENDPOINT);
-        console.log('Fetched trips:', response.data); // Log fetched trips
+        console.log('Fetched trips:', response.data);
         setTrips(response.data);
       } catch (error) {
         console.error('Error fetching trips:', error);
@@ -45,7 +48,7 @@ const BookingPage = () => {
       <h2 className="text-5xl font-extrabold text-center text-white mb-12">Explore Enchanting Trips</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {trips.map((trip) => {
-          const imageSrc = imageMapping[trip.location] ||  swissImage;
+          const imageSrc = imageMapping[trip.location] || swissImage;
           console.log(`Trip: ${trip.title}, Location: ${trip.location}, Image: ${imageSrc}`);
           return (
             <div
@@ -64,9 +67,11 @@ const BookingPage = () => {
                   <p className="text-gray-500 text-sm font-light">{trip.location}</p>
                   <p className="text-gray-800 font-semibold text-lg">${trip.price}</p>
                 </div>
-                <button className="btn-book w-full py-2 rounded-lg bg-blue-600 hover:bg-blue-800 text-white font-semibold">
-                  Book Now
-                </button>
+                <Link to={`/customer/${trip._id}`} state={{ trip }}>
+                  <button className="btn-book w-full py-2 rounded-lg bg-blue-600 hover:bg-blue-800 text-white font-semibold">
+                    Book Now
+                  </button>
+                </Link>
               </div>
             </div>
           );
