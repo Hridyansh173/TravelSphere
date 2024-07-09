@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+TravelSphere
+Welcome to TravelSphere, your ultimate travel companion! TravelSphere is a web application where users can book holiday trips and read engaging travel-related blogs. Explore beautiful destinations, book your dream vacation, and get inspired by our curated travel stories.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+Trip Booking: Browse and book holiday trips to various destinations with detailed descriptions and images.
+Travel Blogs: Read travel-related blogs to get inspiration for your next adventure.
+Table of Contents
+Features
+Installation
+Usage
+API Endpoints
+Frontend Structure
+Technologies Used
+Contributing
+License
+Installation
+git clone https://github.com/yourusername/travelsphere.git
+Navigate to the project directory:
+cd travelsphere
+Install backend dependencies:
+cd backend
+npm install
+Install frontend dependencies:
 
-## Available Scripts
+cd ../frontend
 
-In the project directory, you can run:
+npm install
 
-### `npm start`
+Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Running the Backend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Navigate to the backend directory:
 
-### `npm test`
+Start the backend server:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm start
 
-### `npm run build`
+Running the Frontend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Navigate to the frontend directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+cd ../frontend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Start the frontend development server:
 
-### `npm run eject`
+npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Open your browser and go to http://localhost:5000.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+API Endpoints
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+User Authentication
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+POST /api/auth/register - Register a new user
 
-## Learn More
+POST /api/auth/login - Login a user
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Trips
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+GET /api/trips - Get all trips
 
-### Code Splitting
+POST /api/trips - Add a new trip (Admin only)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+GET /api/trips/:id - Get trip details by ID
 
-### Analyzing the Bundle Size
+Frontend Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+src/components - Contains reusable components like Navbar, Footer, etc.
 
-### Making a Progressive Web App
+src/pages - Contains page components like HomePage, AboutPage, BookingPage, ContactUsPage, TripDetails, etc.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+src/App.js - Main application file with routing setup
 
-### Advanced Configuration
+Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Frontend: React, Tailwind CSS
 
-### Deployment
+Backend: Node.js, Express, MongoDB, JWT for authentication, bcrypt for password hashing, Mongoose for database interaction
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Deployment: Vercel (backend), Netlify (frontend)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contributing
+Contributions are welcome! Please open an issue or submit a pull request if you have any suggestions or improvements.
